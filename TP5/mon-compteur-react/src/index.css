@@ -1,0 +1,36 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+#root { max-width: 520px; margin: 0 auto; padding: 24px; text-align: center; }
+
+.header h1 { margin: 0 0 8px; }
+
+.counter-card, .history-card, .timer-box {
+  background: #1e293b;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 16px;
+}
+
+.counter-display { font-size: 4rem; font-weight: 700; }
+.counter-display.positive { color: #22c55e; }
+.counter-display.negative { color: #ef4444; }
+.counter-display.zero { color: #94a3b8; }
+
+.btn-group { display: flex; gap: 10px; justify-content: center; margin-top: 12px; }
+.btn { border: none; border-radius: 8px; padding: 10px 18px; font-size: 1rem; cursor: pointer; color: #fff; background: #475569; }
+.btn:hover { opacity: 0.85; }
+.btn-inc { background: #16a34a; }
+.btn-dec { background: #dc2626; }
+.btn-reset { background: #475569; }
+
+.step-control { margin-top: 16px; }
+.step-control select { margin-left: 8px; padding: 4px 8px; border-radius: 6px; }
+
+.timer-box { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
