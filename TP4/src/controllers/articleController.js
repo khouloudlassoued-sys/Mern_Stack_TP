@@ -51,8 +51,10 @@ const getMyArticles = async (req, res) => {
 // ================================================================
 const createArticle = async (req, res) => {
     try {
+
+
         // On ne lit PLUS authorId dans le body : le client pourrait mentir !
-        const { title, content } = req.body;
+        const { title, content,category } = req.body;
 
         // [S4] title et content obligatoires (authorId n'est plus demandé)
         if (!title || !content) {
@@ -63,7 +65,7 @@ const createArticle = async (req, res) => {
         //  req.user vient d'un token signé + d'une lecture en base dans protect → l'auteur existe forcément
 
         // L'auteur est extrait du token vérifié : usurpation impossible !
-        const newArticle = await Article.create({ title, content, author: req.user._id });
+        const newArticle = await Article.create({ title, content, category, author: req.user._id });
 
         // On "peuple" l'article créé pour renvoyer directement name + email de l'auteur au client
         // [S4] + role

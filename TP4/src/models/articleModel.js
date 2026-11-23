@@ -16,6 +16,12 @@ const articleSchema = new mongoose.Schema(
             type: String,
             required: [true, 'Le contenu est obligatoire']
         },
+                // Catégorie : liste fermée de valeurs, 'Architecture' si non précisée
+        category: {
+            type: String,
+            enum: ['Architecture', 'Front-End', 'Back-End', 'Cybersecurite'],
+            default: 'Architecture'
+        },
 
         // Auteur : RELATION One-to-Many (1 user -> N articles)
         // On ne stocke PAS tout l'utilisateur, seulement son _id (une "référence", comme une clé étrangère en SQL)
